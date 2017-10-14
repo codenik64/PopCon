@@ -22,8 +22,9 @@ namespace PopsConfectionary14.Controllers
 
         public ActionResult Browse(int id)
         {
+            //Browse products according to category selected
             var categoryModel = db.Categories.Include("Products").Single(p => p.CategoryID == id);
-            //Test line of code
+           
             return View(categoryModel);
         }
 
