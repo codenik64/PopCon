@@ -23,7 +23,7 @@ namespace PopsConfectionary14.Controllers
         public ActionResult Browse(int id)
         {
             var categoryModel = db.Categories.Include("Products").Single(p => p.CategoryID == id);
-
+            //Test line of code
             return View(categoryModel);
         }
 
