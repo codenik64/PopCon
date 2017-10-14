@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace PopsConfectionary14.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         UserManager<ApplicationUser> UserManger = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));

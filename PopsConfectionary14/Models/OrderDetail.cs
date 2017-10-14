@@ -17,7 +17,8 @@ namespace PopsConfectionary14.Models
         public int ProductID{ get; set; }
         public int Quantity { get; set; }
         [Display(Name = "Unit Price")]
-        public decimal UnitPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public double UnitPrice { get; set; }
         public virtual Product product { get; set; }
         public virtual Order Order { get; set; }
     }

@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
-namespace PopsConfectionary12.Controllers
+namespace PopsConfectionary14.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class StaffController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();

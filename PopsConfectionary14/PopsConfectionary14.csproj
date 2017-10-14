@@ -215,45 +215,13 @@
     <Compile Include="LogicLayer\EmailLogic.cs" />
     <Compile Include="LogicLayer\RolesBusiness.cs" />
     <Compile Include="LogicLayer\StaffLogic.cs" />
-    <Compile Include="Migrations\201710102037324_Initial.cs" />
-    <Compile Include="Migrations\201710102037324_Initial.Designer.cs">
-      <DependentUpon>201710102037324_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201710141735345_Update.cs" />
+    <Compile Include="Migrations\201710141735345_Update.Designer.cs">
+      <DependentUpon>201710141735345_Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710102121576_Products.cs" />
-    <Compile Include="Migrations\201710102121576_Products.Designer.cs">
-      <DependentUpon>201710102121576_Products.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710112315593_s.cs" />
-    <Compile Include="Migrations\201710112315593_s.Designer.cs">
-      <DependentUpon>201710112315593_s.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710112335454_cool.cs" />
-    <Compile Include="Migrations\201710112335454_cool.Designer.cs">
-      <DependentUpon>201710112335454_cool.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710120029398_s1.cs" />
-    <Compile Include="Migrations\201710120029398_s1.Designer.cs">
-      <DependentUpon>201710120029398_s1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710120135338_m.cs" />
-    <Compile Include="Migrations\201710120135338_m.Designer.cs">
-      <DependentUpon>201710120135338_m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710120908410_Payment.cs" />
-    <Compile Include="Migrations\201710120908410_Payment.Designer.cs">
-      <DependentUpon>201710120908410_Payment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710120933004_role.cs" />
-    <Compile Include="Migrations\201710120933004_role.Designer.cs">
-      <DependentUpon>201710120933004_role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710120944195_delivery.cs" />
-    <Compile Include="Migrations\201710120944195_delivery.Designer.cs">
-      <DependentUpon>201710120944195_delivery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710121126184_s2.cs" />
-    <Compile Include="Migrations\201710121126184_s2.Designer.cs">
-      <DependentUpon>201710121126184_s2.cs</DependentUpon>
+    <Compile Include="Migrations\201710142023137_DoubleChange.cs" />
+    <Compile Include="Migrations\201710142023137_DoubleChange.Designer.cs">
+      <DependentUpon>201710142023137_DoubleChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710142039518_pay.cs" />
     <Compile Include="Migrations\201710142039518_pay.Designer.cs">
@@ -397,35 +365,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710102037324_Initial.resx">
-      <DependentUpon>201710102037324_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710141735345_Update.resx">
+      <DependentUpon>201710141735345_Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710102121576_Products.resx">
-      <DependentUpon>201710102121576_Products.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710112315593_s.resx">
-      <DependentUpon>201710112315593_s.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710112335454_cool.resx">
-      <DependentUpon>201710112335454_cool.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710120029398_s1.resx">
-      <DependentUpon>201710120029398_s1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710120135338_m.resx">
-      <DependentUpon>201710120135338_m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710120908410_Payment.resx">
-      <DependentUpon>201710120908410_Payment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710120933004_role.resx">
-      <DependentUpon>201710120933004_role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710120944195_delivery.resx">
-      <DependentUpon>201710120944195_delivery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710121126184_s2.resx">
-      <DependentUpon>201710121126184_s2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710142023137_DoubleChange.resx">
+      <DependentUpon>201710142023137_DoubleChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710142039518_pay.resx">
       <DependentUpon>201710142039518_pay.cs</DependentUpon>

@@ -26,8 +26,8 @@ namespace PopsConfectionary14.Models
         [Required]
         public string Status { get; set; }
         [Display(Name = "Delivery Cost")]
-        public decimal deliveryCost { get; set; }
-        public decimal Total { get; set; }
+        public double deliveryCost { get; set; }
+        public double Total { get; set; }
 
         
     }
