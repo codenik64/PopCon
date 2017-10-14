@@ -1,0 +1,74 @@
+﻿@model PopsConfectionary14.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditCarholder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditCarholder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditcardNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditcardNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deliveryCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deliveryCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

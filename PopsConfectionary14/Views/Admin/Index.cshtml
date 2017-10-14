@@ -1,0 +1,111 @@
+﻿
+
+<nav class="navbar navbar-inverse visible-xs">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bakery App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Categories</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav hidden-xs">
+            <h2>Snatched</h2>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><b><h4>Dashboard</></h4></b></li>
+
+                <li>@Html.ActionLink("Categories", "Index", "Categories")</li>
+                <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                <li>@Html.ActionLink("Roles", "Index", "Roles")</li>
+                <li>@Html.ActionLink("Manage Users", "ManageUsers", "Roles")</li>
+
+
+            </ul><br>
+        </div>
+        <br>
+
+        <div class="col-sm-9">
+            <div class="well">
+                <h2>Dashboard</h2>
+                <h4> <p><b>Welcome to the dashboard of PopsConfectionary</b></p></h4>
+                <p>Customise user access roles and create, view, update and delete Products and Categories</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <div class="well" style="background-color:indianred">
+
+                        <div class="btn btn-default">
+                            @Html.ActionLink("Create Role", "Create", "Roles")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="well" style="background-color:indianred">
+
+                        <div class="btn btn-default">
+                            @Html.ActionLink("Manage User Roles", "ManageUsers", "Roles")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="well" style="background-color:indianred">
+
+                        <div class="btn btn-default">
+                            @Html.ActionLink("Orders", "Index", "Orders")
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <div class="well" style="background-color:lightslategrey">
+                        <div class="btn btn-default">
+                            @Html.ActionLink("View Clients", "Index", "Clients")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="well" style="background-color:lightslategray">
+                        <div class="btn btn-default">
+                            @Html.ActionLink("Register Staff Members", "Index", "Staff")
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <div class="well" style="background-color:burlywood">
+                        <div class="btn btn-default">
+                            @Html.ActionLink("View Products", "Index", "Products")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 text-center">
+                    <div class="well" style="background-color:burlywood">
+                        <div class="btn btn-default">
+                            @Html.ActionLink("View Categories", "Index", "Categories")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
