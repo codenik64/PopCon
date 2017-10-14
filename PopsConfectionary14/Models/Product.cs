@@ -20,7 +20,7 @@ namespace PopsConfectionary14.Models
             public string       ProductDescription  { get; set; }
 
         [Required, Display(Name = "Price"), DataType(DataType.Currency)]
-            public decimal       ProductPrice             { get; set; }
+            public double       ProductPrice             { get; set; }
 
         [Display(Name = "Product Image")]
             public byte[]       Image               { get; set; }

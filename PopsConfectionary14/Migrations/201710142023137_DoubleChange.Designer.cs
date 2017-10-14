@@ -7,13 +7,13 @@ namespace PopsConfectionary14.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class s2 : IMigrationMetadata
+    public sealed partial class DoubleChange : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(s2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DoubleChange));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710121126184_s2"; }
+            get { return "201710142023137_DoubleChange"; }
         }
         
         string IMigrationMetadata.Source

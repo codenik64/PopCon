@@ -3,7 +3,7 @@ namespace PopsConfectionary14.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Update : DbMigration
     {
         public override void Up()
         {
@@ -27,11 +27,38 @@ namespace PopsConfectionary14.Migrations
                 c => new
                     {
                         ProductID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        ProductDescription = c.String(),
-                        ProductPrice = c.Int(nullable: false),
+                        Name = c.String(nullable: false),
+                        ProductDescription = c.String(nullable: false),
+                        ProductPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Image = c.Binary(),
+                        ImageType = c.String(),
+                        CategoryID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ProductID);
+                .PrimaryKey(t => t.ProductID)
+                .ForeignKey("dbo.Categories", t => t.CategoryID, cascadeDelete: true)
+                .Index(t => t.CategoryID);
+            
+            CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        CategoryID = c.Int(nullable: false, identity: true),
+                        CategoryType = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.CategoryID);
+            
+            CreateTable(
+                "dbo.Clients",
+                c => new
+                    {
+                        CusID = c.Int(nullable: false, identity: true),
+                        Cname = c.String(nullable: false, maxLength: 100),
+                        Surname = c.String(nullable: false, maxLength: 100),
+                        Address = c.String(nullable: false, maxLength: 100),
+                        Contact = c.String(nullable: false, maxLength: 10),
+                        Email = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.CusID);
             
             CreateTable(
                 "dbo.Orders",
@@ -41,6 +68,10 @@ namespace PopsConfectionary14.Migrations
                         Username = c.String(),
                         FirstName = c.String(),
                         LastName = c.String(),
+                        Address = c.String(),
+                        Status = c.String(),
+                        PaymentType = c.String(),
+                        DeliveryCost = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Email = c.String(),
                         Total = c.Decimal(nullable: false, precision: 18, scale: 2),
                         OrderDate = c.DateTime(nullable: false),
@@ -62,6 +93,21 @@ namespace PopsConfectionary14.Migrations
                 .ForeignKey("dbo.Products", t => t.ProductID, cascadeDelete: true)
                 .Index(t => t.OrderId)
                 .Index(t => t.ProductID);
+            
+            CreateTable(
+                "dbo.Payments",
+                c => new
+                    {
+                        PID = c.Int(nullable: false, identity: true),
+                        CreditCarholder = c.String(nullable: false),
+                        expDate = c.String(nullable: false),
+                        CreditcardNo = c.String(nullable: false),
+                        CVV = c.String(nullable: false),
+                        Status = c.String(nullable: false),
+                        deliveryCost = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Total = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.PID);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -163,6 +209,7 @@ namespace PopsConfectionary14.Migrations
             DropForeignKey("dbo.OrderDetails", "ProductID", "dbo.Products");
             DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.Carts", "ProductID", "dbo.Products");
+            DropForeignKey("dbo.Products", "CategoryID", "dbo.Categories");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -171,6 +218,7 @@ namespace PopsConfectionary14.Migrations
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.OrderDetails", new[] { "ProductID" });
             DropIndex("dbo.OrderDetails", new[] { "OrderId" });
+            DropIndex("dbo.Products", new[] { "CategoryID" });
             DropIndex("dbo.Carts", new[] { "ProductID" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
@@ -178,8 +226,11 @@ namespace PopsConfectionary14.Migrations
             DropTable("dbo.Staffs");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Payments");
             DropTable("dbo.OrderDetails");
             DropTable("dbo.Orders");
+            DropTable("dbo.Clients");
+            DropTable("dbo.Categories");
             DropTable("dbo.Products");
             DropTable("dbo.Carts");
         }
