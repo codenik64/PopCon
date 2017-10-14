@@ -103,21 +103,21 @@ namespace PopsConfectionary14.Models
             return count ?? 0;
         }
 
-        public decimal GetTotal()
+        public double GetTotal()
         {
             // Multiply album price by count of that album to get
             // the current price for each of those albums in the cart
             // sum all album price totals to get the cart total
 
-            decimal? total = (from cartItems in storeDB.Cart
+            double total = Convert.ToDouble((from cartItems in storeDB.Cart
                               where cartItems.CartId == ShoppingCartId
-                              select (int?)cartItems.Count * cartItems.product.ProductPrice).Sum();
-            return total ?? decimal.Zero;
+                              select (int?)cartItems.Count * cartItems.product.ProductPrice).Sum());
+            return total;
         }
 
         public int CreateOrder(Order order)
         {
-            decimal orderTotal = 0;
+            double orderTotal = 0;
             var cartItems = GetCartItems();
             // Iterate over the items in the cart, adding the order details for each
             foreach (var item in cartItems)
@@ -130,7 +130,7 @@ namespace PopsConfectionary14.Models
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.product.ProductPrice);
+                orderTotal = orderTotal + (item.Count * item.product.ProductPrice);
                 storeDB.OrderDetail.Add(orderDetail);
             }
             // Set the order's total to the orderTotal count
@@ -171,6 +171,32 @@ namespace PopsConfectionary14.Models
             }
             storeDB.SaveChanges();
             EmptyCart();
+        }
+
+        public int UpdateCartCount(int id, int cartCount)
+        {
+            // Get the cart 
+            var cartItem = storeDB.Cart.Single(
+                cart => cart.CartId == ShoppingCartId
+                && cart.RecordId == id);
+
+            int itemCount = 0;
+
+            if (cartItem != null)
+            {
+                if (cartCount > 0)
+                {
+                    cartItem.Count = cartCount;
+                    itemCount = cartItem.Count;
+                }
+                else
+                {
+                    storeDB.Cart.Remove(cartItem);
+                }
+                // Save changes 
+                storeDB.SaveChanges();
+            }
+            return itemCount;
         }
 
     }

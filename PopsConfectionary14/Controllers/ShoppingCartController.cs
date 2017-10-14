@@ -83,5 +83,36 @@ namespace PopsConfectionary14.Controllers
             ViewData["CartCount"] = cart.GetCount();
             return PartialView("CartSummary");
         }
+
+        [HttpPost]
+        public ActionResult UpdateCartCount(int id, int cartCount)
+        {
+            // Get the cart 
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            // Get the name of the album to display confirmation 
+            string productName = storeDB.Cart
+                .Single(item => item.RecordId == id).product.Name;
+
+            // Update the cart count 
+            int itemCount = cart.UpdateCartCount(id, cartCount);
+
+            //Prepare messages
+            string msg = "The quantity of " + Server.HtmlEncode(productName) +
+                    " has been refreshed in your shopping cart.";
+            if (itemCount == 0) msg = Server.HtmlEncode(productName) +
+                    " has been removed from your shopping cart.";
+            //
+            // Display the confirmation message 
+            var results = new ShoppingCartRemoveViewModel
+            {
+                Message = msg,
+                CartTotal = cart.GetTotal(),
+                CartCount = cart.GetCount(),
+                ItemCount = itemCount,
+                DeleteId = id
+            };
+            return Json(results);
+        }
     }
 }
