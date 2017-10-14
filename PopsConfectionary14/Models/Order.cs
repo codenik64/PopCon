@@ -20,7 +20,7 @@ namespace PopsConfectionary14.Models
         public string Address { get; set; }
         public string Status { get; set; }
         public string PaymentType { get; set; }
-        public decimal DeliveryCost { get; set; }
+        public double DeliveryCost { get; set; }
         public string Email { get; set; }
         [Display(Name = "Credit Card Holder")]
         [Required]
@@ -34,7 +34,7 @@ namespace PopsConfectionary14.Models
         [Required]
         [Display(Name = "CVV Number")]
         public string CVV { get; set; }
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
 
  
