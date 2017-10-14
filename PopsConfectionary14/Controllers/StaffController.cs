@@ -16,7 +16,7 @@ namespace PopsConfectionary12.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         StaffLogic sl = new StaffLogic();
-
+        EmailLogic email = new EmailLogic();
         // GET: Staff
         public ActionResult Index()
         {
@@ -64,7 +64,7 @@ namespace PopsConfectionary12.Controllers
                     var user = new ApplicationUser();
                     user.UserName = UserName;
                     user.Email = Email;
-
+                    email.Index(Model.Email, "Welcome", "Thank you for Registering. Your username is " + Model.Email + " " + "And your Password is : Password01");
                     var newuser = UserManager.Create(user, Password);
                     db.Staff.Add(Model);
                     //UserManager.AddToRoleAsync(user.Id, staff.Role);

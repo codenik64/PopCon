@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PopsConfectionary14.Models;
 using Microsoft.AspNet.Identity;
+using PopsConfectionary14.LogicLayer;
 
 namespace PopsConfectionary14.Controllers
 {
@@ -31,6 +32,8 @@ namespace PopsConfectionary14.Controllers
             var order = new Order();
             var cart = ShoppingCart.GetCart(this.HttpContext);
             var pay = new Payment();
+            EmailLogic email = new EmailLogic();
+            
 
             TryUpdateModel(order);
             try
@@ -57,13 +60,8 @@ namespace PopsConfectionary14.Controllers
                 var list = storeDB.Clients.FirstOrDefault(x => x.Email == order.Username);
                 order.FirstName = list.Cname;
                 order.LastName = list.Surname;//Save Order
-                ViewBag.name = list.Cname;
-                ViewBag.Surname = list.Surname;
-                ViewBag.Address = order.Address;
-                ViewBag.Status = order.Status;
-                ViewBag.payment = order.PaymentType;
-                ViewBag.total = order.Total;
-                ViewBag.delivery = order.DeliveryCost;
+                email.Index(order.Email, "Welcome", "Thank you , Your Order has been successfully placed " + " " + "Your order Total is " + order.Total );
+       
                 storeDB.order.Add(order);
                 storeDB.SaveChanges();
 

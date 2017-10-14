@@ -212,6 +212,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LogicLayer\ClientBussiness.cs" />
+    <Compile Include="LogicLayer\EmailLogic.cs" />
     <Compile Include="LogicLayer\RolesBusiness.cs" />
     <Compile Include="LogicLayer\StaffLogic.cs" />
     <Compile Include="Migrations\201710102037324_Initial.cs" />
@@ -253,6 +254,10 @@
     <Compile Include="Migrations\201710121126184_s2.cs" />
     <Compile Include="Migrations\201710121126184_s2.Designer.cs">
       <DependentUpon>201710121126184_s2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710142039518_pay.cs" />
+    <Compile Include="Migrations\201710142039518_pay.Designer.cs">
+      <DependentUpon>201710142039518_pay.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -421,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710121126184_s2.resx">
       <DependentUpon>201710121126184_s2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710142039518_pay.resx">
+      <DependentUpon>201710142039518_pay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

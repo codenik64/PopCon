@@ -5,16 +5,34 @@
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 @using (Html.BeginForm())
 {
-    <h2>Address And Payment</h2>
+    <div class="col-md-6">
+        <h2>Address Infromation</h2>
 
-    @Html.LabelFor(x => x.Address, htmlAttributes: new { @class = "control-label" })
-    @Html.EditorFor(x => x.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
-    
-    <br/>
-    @Html.LabelFor(x => x.Status, htmlAttributes: new { @class = "control-label" })
-  <p> @Html.RadioButtonFor(x => x.Status, "Delivery") Delivery</p>
-   <p> @Html.RadioButtonFor(x => x.Status, "Collection") Collection</p>
-    <br/>
+        @Html.LabelFor(x => x.Address, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(x => x.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+
+        <br />
+        @Html.LabelFor(x => x.Status, htmlAttributes: new { @class = "control-label" })
+        <p> @Html.RadioButtonFor(x => x.Status, "Delivery") Delivery</p>
+        <p> @Html.RadioButtonFor(x => x.Status, "Collection") Collection</p>
+        <br />
+        <br />
+    </div>
+
+    <div class="col-md-6">
+        <h2>Payment Information</h2>
+        @Html.LabelFor(x => x.CreditCarholder, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(x => x.CreditCarholder, new { htmlAttributes = new { @class = "form-control", placeholder = "Credit Card Holder" } })
+        <br/>
+        @Html.LabelFor(x => x.CreditcardNo, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(x => x.CreditcardNo, new { htmlAttributes = new { @class = "form-control", placeholder = "Credit Card Number" } })
+        <br/>
+        @Html.LabelFor(x => x.expDate, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(x => x.expDate, new { htmlAttributes = new { @class = "form-control", placeholder = "Expiry Date" } })
+        <br/>
+        @Html.LabelFor(x => x.CVV, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(x => x.CVV, new { htmlAttributes = new { @class = "form-control", placeholder = "CVV" } })
+    </div>
 
     <div class="form-group">
         <div >

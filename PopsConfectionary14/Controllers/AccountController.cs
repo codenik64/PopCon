@@ -158,6 +158,8 @@ namespace PopsConfectionary14.Controllers
                 cb.RegisterClient(model);
                 if (result.Succeeded)
                 {
+                    EmailLogic em = new EmailLogic();
+                    em.Index(model.Email, "Welcome", "Thank you for Registering. Your username is " + model.Email);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

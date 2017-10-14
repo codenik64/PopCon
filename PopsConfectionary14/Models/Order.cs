@@ -22,6 +22,18 @@ namespace PopsConfectionary14.Models
         public string PaymentType { get; set; }
         public decimal DeliveryCost { get; set; }
         public string Email { get; set; }
+        [Display(Name = "Credit Card Holder")]
+        [Required]
+        public string CreditCarholder { get; set; }
+        [Required]
+        [Display(Name = "Expiry Date")]
+        public string expDate { get; set; }
+        [Required]
+        [Display(Name = "Credit Card Number")]
+        public string CreditcardNo { get; set; }
+        [Required]
+        [Display(Name = "CVV Number")]
+        public string CVV { get; set; }
         public decimal Total { get; set; }
 
 
