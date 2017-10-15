@@ -77,6 +77,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -197,6 +202,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
@@ -213,19 +219,17 @@
     </Compile>
     <Compile Include="LogicLayer\ClientBussiness.cs" />
     <Compile Include="LogicLayer\EmailLogic.cs" />
+    <Compile Include="LogicLayer\ProductLogic.cs" />
     <Compile Include="LogicLayer\RolesBusiness.cs" />
     <Compile Include="LogicLayer\StaffLogic.cs" />
-    <Compile Include="Migrations\201710141735345_Update.cs" />
-    <Compile Include="Migrations\201710141735345_Update.Designer.cs">
-      <DependentUpon>201710141735345_Update.cs</DependentUpon>
+    <Compile Include="LogicLayer\UserLogic.cs" />
+    <Compile Include="Migrations\201710142158376_Update.cs" />
+    <Compile Include="Migrations\201710142158376_Update.Designer.cs">
+      <DependentUpon>201710142158376_Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710142023137_DoubleChange.cs" />
-    <Compile Include="Migrations\201710142023137_DoubleChange.Designer.cs">
-      <DependentUpon>201710142023137_DoubleChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710142039518_pay.cs" />
-    <Compile Include="Migrations\201710142039518_pay.Designer.cs">
-      <DependentUpon>201710142039518_pay.cs</DependentUpon>
+    <Compile Include="Migrations\201710142234430_Archhive.cs" />
+    <Compile Include="Migrations\201710142234430_Archhive.Designer.cs">
+      <DependentUpon>201710142234430_Archhive.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,7 +276,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -351,6 +357,12 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Roles\ManageUsers.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ApplicationUsers\Delete.cshtml" />
+    <Content Include="Views\ApplicationUsers\Details.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\ApplicationUsers\Remove.cshtml" />
+    <Content Include="Views\ApplicationUsers\DeleteUsers.cshtml" />
+    <Content Include="Views\ApplicationUsers\ReActivate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -365,14 +377,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710141735345_Update.resx">
-      <DependentUpon>201710141735345_Update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710142158376_Update.resx">
+      <DependentUpon>201710142158376_Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710142023137_DoubleChange.resx">
-      <DependentUpon>201710142023137_DoubleChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710142039518_pay.resx">
-      <DependentUpon>201710142039518_pay.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710142234430_Archhive.resx">
+      <DependentUpon>201710142234430_Archhive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

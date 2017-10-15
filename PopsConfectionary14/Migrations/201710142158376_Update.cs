@@ -3,7 +3,7 @@ namespace PopsConfectionary14.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DoubleChange : DbMigration
+    public partial class Update : DbMigration
     {
         public override void Up()
         {

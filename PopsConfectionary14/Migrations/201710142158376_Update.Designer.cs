@@ -13,7 +13,7 @@ namespace PopsConfectionary14.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710141735345_Update"; }
+            get { return "201710142158376_Update"; }
         }
         
         string IMigrationMetadata.Source

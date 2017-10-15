@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PopsConfectionary14.Models;
+using Microsoft.Office.Interop.Outlook;
 
 namespace PopsConfectionary14.LogicLayer
 {
@@ -109,5 +110,7 @@ namespace PopsConfectionary14.LogicLayer
             ss.IsActive = true;
             db.SaveChanges();
         }
+
+    
     }
 }
